@@ -14,3 +14,8 @@ gradle-app.setting
 # gradle/wrapper/gradle-wrapper.properties
 
 .dccache
+
+# Go binaries
+
+hello-cockroach-go/hello-cockroach-go
+crud-cockcoach-go/crud-cockcoach-go
