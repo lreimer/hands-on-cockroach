@@ -18,4 +18,4 @@ gradle-app.setting
 # Go binaries
 
 hello-cockroach-go/hello-cockroach-go
-crud-cockcoach-go/crud-cockcoach-go
+crud-cockroach-go/crud-cockroach-go
