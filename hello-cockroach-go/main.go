@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"log"
 	"os"
+	"time"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -18,10 +19,13 @@ func main() {
 	connstring := os.ExpandEnv(scanner.Text())
 
 	// Connect to the "bank" database
-	_, err := gorm.Open(postgres.Open(connstring), &gorm.Config{})
+	db, err := gorm.Open(postgres.Open(connstring), &gorm.Config{})
 	if err != nil {
 		log.Fatal("error configuring the database: ", err)
 	}
 	log.Println("Hey! You successfully connected to your CockroachDB cluster.")
 
+	var now time.Time
+	db.Raw("SELECT now()").Scan(&now)
+	log.Println("The current timestamp is:", now)
 }
